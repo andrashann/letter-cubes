@@ -78,6 +78,8 @@ def get_caches(cubes: str, dic: str = "en/en_US.dic", json: bool = False):
                     found_match = True
                     results.append(word)
 
+    results = sorted(list(set(results)))
+
     if json:
         return JSONResponse(content=results)
 
