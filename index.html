@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <title>Words in letter blocks</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Words in letter blocks" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="http://hann.io/words-in-letter-blocks/og.jpg" />
+  <meta property="og:description" content="Find the words you can make out of the letters on letter blocks" />
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="container" style="max-width: 800px;">
+    <h1 class="mt-4">Words in letter blocks</h1>
+
+    <p>If you have ever found some wooden blocks with letters on them
+      and tried to figure out what words you can make using these cubes, look no further
+      because this is the website to solve your problems.
+    </p>
+    <p>Is it unclear what I mean? Just look at this picture:</p>
+    <p><img src="og.jpg" class="img-thumbnail"></p>
+
+    <h2>Get words for your cubes:</h2>
+    <form action="https://letter-blocks.herokuapp.com/c/" method="get"
+      onsubmit="this.action = this.action + this.cubes.value; this.submit();">
+      <div class="form-group row">
+        <label for="cubes" class="col-4 col-form-label">Letters on each cube, comma separated</label>
+        <div class="col-8">
+          <input id="cubes" name="cubes" placeholder="abcdef,ghijkl,mnopqr" type="text" class="form-control"
+            value="abcdef,ghijkl,mnopqr" required="required">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="dic" class="col-4 col-form-label">Language</label>
+        <div class="col-8">
+          <select id="dic" name="dic" required="required" class="custom-select">
+            <option value="da_DK/da_DK.dic">Danish</option>
+            <option value="nl_NL/nl_NL.dic">Dutch</option>
+            <option value="en/en_GB.dic">English (Great Britain)</option>
+            <option value="en/en_US.dic" selected>English (USA)</option>
+            <option value="et_EE/et_EE.dic">Estonian</option>
+            <option value="fr_FR/fr.dic">French</option>
+            <option value="gl/gl_ES.dic">Galician</option>
+            <option value="de/de_DE_frami.dic">German</option>
+            <option value="el_GR/el_GR.dic">Greek</option>
+            <option value="gug/gug.dic">Guarani</option>
+            <option value="gu_IN/gu_IN.dic">Gujarati</option>
+            <option value="he_IL/he_IL.dic">Hebrew</option>
+            <option value="hi_IN/hi_IN.dic">Hindi</option>
+            <option value="hu_HU/hu_HU.dic">Hungarian</option>
+            <option value="is/is.dic">Icelandic</option>
+            <option value="id/id_ID.dic">Indonesian</option>
+            <option value="it_IT/it_IT.dic">Italian</option>
+            <option value="kmr_Latn/kmr_Latn.dic">Kurdish</option>
+            <option value="lo_LA/lo_LA.dic">Lao</option>
+            <option value="lv_LV/lv_LV.dic">Latvian</option>
+            <option value="lt_LT/lt.dic">Lithuanian</option>
+            <option value="ne_NP/ne_NP.dic">Nepali</option>
+            <option value="no/nb_NO.dic">Norwegian (Bokmål)</option>
+            <option value="no/nn_NO.dic">Norwegian (Nynorsk)</option>
+            <option value="oc_FR/oc_FR.dic">Occitan</option>
+            <option value="pl_PL/pl_PL.dic">Polish</option>
+            <option value="pt_BR/pt_BR.dic">Portuguese (Brazil)</option>
+            <option value="pt_PT/pt_PT.dic">Portuguese (Portugal)</option>
+            <option value="ro/ro_RO.dic">Romanian</option>
+            <option value="ru_RU/ru_RU.dic">Russian</option>
+            <option value="sr/sr-Latn.dic">Serbian (Latin)</option>
+            <option value="sr/sr.dic">Seriban (Cyrillic)</option>
+            <option value="si_LK/si_LK.dic">Sinhala</option>
+            <option value="sk_SK/sk_SK.dic">Slovak</option>
+            <option value="sl_SI/sl_SI.dic">Slovenian</option>
+            <option value="es/es.dic">Spanish</option>
+            <option value="sw_TZ/sw_TZ.dic">Swahili</option>
+            <option value="sv_SE/sv_SE.dic">Swedish</option>
+            <option value="te_IN/te_IN.dic">Telugu</option>
+            <option value="th_TH/th_TH.dic">Thai</option>
+            <option value="tr_TR/tr_TR.dic">Turkish</option>
+            <option value="uk_UA/uk_UA.dic">Ukrainian</option>
+            <option value="vi/vi_VN.dic">Vietnamese</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-4">Data only</label>
+        <div class="col-8">
+          <div class="custom-control custom-radio custom-control-inline">
+            <input name="json" id="json_0" type="radio" class="custom-control-input" value="false" checked>
+            <label for="json_0" class="custom-control-label">No</label>
+          </div>
+          <div class="custom-control custom-radio custom-control-inline">
+            <input name="json" id="json_1" type="radio" class="custom-control-input" value="true">
+            <label for="json_1" class="custom-control-label">Yes</label>
+          </div>
+          <span id="jsonHelpBlock" class="form-text text-muted">Do you want to get just the raw data without any
+            formatting?</span>
+
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="offset-4 col-8">
+          <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </form>
+    <p class="text-muted mt-5"><small>&copy; 2021 – released under the MIT license. <a
+          href="https://letter-blocks.herokuapp.com/">API</a>, <a
+          href="https://github.com/andrashann/words-in-letter-blocks">GitHub repo</a>. <br /> Thanks to <a
+          href="https://bootstrapformbuilder.com/">BootsrapFormBuilder.com</a>.</small></p>
+  </div>
+</body>
+
+</html>
