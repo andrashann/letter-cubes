@@ -41,6 +41,18 @@
         <label for="dic" class="col-4 col-form-label">Language</label>
         <div class="col-8">
           <select id="dic" name="dic" required="required" class="custom-select">
+            <option value="af_ZA/af_ZA.dic">Afrikaans</option>
+            <option value="sq_AL/sq_AL.dic">Albanian</option>
+            <option value="ar/ar.dic">Arabic</option>
+            <option value="an_ES/an_ES.dic">Aragones</option>
+            <option value="be_BY/be_BY.dic">Belarusian</option>
+            <option value="bn_BD/bn_BD.dic">Bengali</option>
+            <option value="bs_BA/bs_BA.dic">Bosnian</option>
+            <option value="br_FR/br_FR.dic">Breton</option>
+            <option value="bg_BG/bg_BG.dic">Bulgarian</option>
+            <option value="ca/dictionaries/ca.dic">Catalan</option>
+            <option value="hr_HR/hr_HR.dic">Croatian</option>
+            <option value="cs_CZ/cs_CZ.dic">Czech</option>
             <option value="da_DK/da_DK.dic">Danish</option>
             <option value="nl_NL/nl_NL.dic">Dutch</option>
             <option value="en/en_GB.dic">English (Great Britain)</option>
@@ -109,6 +121,11 @@
         </div>
       </div>
     </form>
+    <p class="text-muted">The API uses .dic files from the <a
+        href="https://github.com/LibreOffice/dictionaries">LibreOffice GitHub repository</a>; I do not take
+      responsibility
+      for the words actually being correct or used in daily life. Some of them might not make sense (as this data source
+      is not an actual word list but a source for a spell checker), but most of them should.</p>
     <p class="text-muted mt-5"><small>&copy; 2021 – released under the MIT license. <a
           href="https://letter-blocks.herokuapp.com/">API</a>, <a
           href="https://github.com/andrashann/words-in-letter-blocks">GitHub repo</a>. <br /> Thanks to <a
