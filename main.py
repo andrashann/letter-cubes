@@ -96,8 +96,13 @@ def get_caches(cubes: str, dic: str = "en/en_US.dic", json: bool = False):
     <meta property="og:description" content="Find the words you can make out of the letters on letter blocks" />
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    </head><body><ol>
-    {% for e in results %}<li>{{ e }}</li>{% endfor %}
-    </ol></body></html>''')
+    </head><body>
+    <div class="container" style="max-width: 800px;">
+      <h1>Words in your blocks</h1>
+      <ol>
+        {% for e in results %}<li>{{ e }}</li>{% endfor %}
+      </ol>
+    </div>
+    </body></html>''')
 
     return(template.render(results=results))
