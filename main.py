@@ -84,7 +84,19 @@ def get_caches(cubes: str, dic: str = "en/en_US.dic", json: bool = False):
         return JSONResponse(content=results)
 
     template = jinja2.Template('''
-    <html><head></head><body><ol>
+    <html><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Words in letter blocks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:title" content="Words in letter blocks" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="http://hann.io/words-in-letter-blocks/og.jpg" />
+    <meta property="og:description" content="Find the words you can make out of the letters on letter blocks" />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    </head><body><ol>
     {% for e in results %}<li>{{ e }}</li>{% endfor %}
     </ol></body></html>''')
 
